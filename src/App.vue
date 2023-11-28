@@ -4,7 +4,7 @@ import { store } from "./store.js";
 import AppHeader from "./components/AppHeader.vue";
 import AppList from "./components/AppList.vue";
 import AppSelect from "./components/AppSelect.vue";
-
+import AppStats from "./components/AppStats.vue";
 
 export default {
   data () {
@@ -39,7 +39,7 @@ export default {
       })
     }
   },
-  components: { AppHeader, AppList, AppSelect }
+  components: { AppHeader, AppList, AppSelect, AppStats }
 }
 
 </script>
@@ -47,6 +47,7 @@ export default {
 <template>
 
 <AppHeader />
+<AppStats />
 <AppSelect @show="handleSearch" />
 <AppList />
 
