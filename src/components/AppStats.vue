@@ -12,7 +12,7 @@ export default {
 
 <template>
   <div class="container">
-    <h2> Totale {{ store.cards.data.length }} personaggi </h2>
+    <h2> Totale {{ store.cards.length }} personaggi </h2>
   </div>
 </template>
 <style scoped lang="scss">
