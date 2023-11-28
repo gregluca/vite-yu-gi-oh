@@ -15,7 +15,7 @@ export default {
 <template>
  <div class="container">
         <div class="row">
-            <div class="col-3 align-items-stretch p-3" v-for="card in store.cards" :key="card.id">
+            <div class="col-3 align-items-stretch p-3" v-for="card in store.cards.data" :key="card.id">
                 <AppCard :card="card" />
             </div>
         </div>
@@ -24,6 +24,6 @@ export default {
 
 <style scoped lang="scss">
 .container {
-    background-color: white;
+    background-color: rgba(241, 204, 136, 0.632);
 }
 </style>

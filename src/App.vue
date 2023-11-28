@@ -3,6 +3,8 @@ import axios from "axios";
 import { store } from "./store.js";
 import AppHeader from "./components/AppHeader.vue";
 import AppList from "./components/AppList.vue";
+import AppSelect from "./components/AppSelect.vue";
+
 
 export default {
   data () {
@@ -12,11 +14,32 @@ export default {
     
   },
   created() {
-    axios.get(this.store.apiUrl).then((resp) => {
-      this.store.cards = resp.data.data;
+    axios
+    .get(this.store.apiUrl, {
+      params: {
+        num: 20,
+        offset: 0
+      }
+    })
+    .then((resp) => {
+      this.store.cards = resp.data;
     });
   },
-  components: { AppHeader, AppList }
+  methods: {
+    handleSearch(){
+      axios
+      .get(this.store.apiArchUrl, {
+        params: {
+          archetype: this.store.selectOption,
+          num: 20,
+          offset: 0
+        }
+      }).then((resp) => {
+        this.store.cards = resp.data;
+      })
+    }
+  },
+  components: { AppHeader, AppList, AppSelect }
 }
 
 </script>
@@ -24,6 +47,7 @@ export default {
 <template>
 
 <AppHeader />
+<AppSelect @show="handleSearch" />
 <AppList />
 
 </template>

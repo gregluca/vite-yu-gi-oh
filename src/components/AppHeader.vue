@@ -13,7 +13,11 @@ export default {
 
 <style scoped lang="scss">
 header {
-    background-color: white;
+    background-color: rgb(176, 144, 84);
+    h1 {
+        text-align: center;
+        color: white;
+    }
 }
 
 </style>
