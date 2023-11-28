@@ -12,5 +12,8 @@ export default {
 </template>
 
 <style scoped lang="scss">
+header {
+    background-color: white;
+}
 
 </style>
